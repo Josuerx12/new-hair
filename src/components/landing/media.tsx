@@ -16,8 +16,10 @@ type PlaceholderMediaProps = {
 type SplitSectionProps = {
   eyebrow?: string;
   title: string;
-  description: string;
+  description?: string;
+  content?: React.ReactNode;
   media: React.ReactNode;
+  mediaStyle?: boolean;
   reverse?: boolean;
   cta?: React.ReactNode;
 };
@@ -113,9 +115,11 @@ export function SplitSection({
   eyebrow,
   title,
   description,
+  content,
   media,
   reverse = false,
   cta,
+  mediaStyle = true,
 }: SplitSectionProps) {
   return (
     <div
@@ -124,10 +128,16 @@ export function SplitSection({
         reverse && "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1",
       )}
     >
-      <div className="overflow-hidden flex-1 rounded-4xl border border-stone-200 bg-white shadow-[0_18px_50px_rgba(28,25,23,0.08)]">
+      <div
+        className={joinClasses(
+          "w-full",
+          mediaStyle &&
+            "overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-[0_18px_50px_rgba(28,25,23,0.08)]",
+        )}
+      >
         {media}
       </div>
-      <div className="space-y-5">
+      <div className="w-full space-y-5">
         {eyebrow ? (
           <span className="inline-flex rounded-full border border-stone-300 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-600">
             {eyebrow}
@@ -136,9 +146,10 @@ export function SplitSection({
         <h2 className="font-display text-3xl leading-tight text-stone-900 sm:text-4xl">
           {title}
         </h2>
-        <p className="text-base leading-7 text-stone-600 sm:text-lg">
-          {description}
-        </p>
+        {content ? content : null}
+        {description ? (
+          <p className="text-lg text-stone-700">{description}</p>
+        ) : null}
         {cta ? <div className="pt-2">{cta}</div> : null}
       </div>
     </div>
@@ -179,14 +190,14 @@ export function FramedImage({
   className?: string;
 }) {
   return (
-    <div
-      className={joinClasses("relative min-h-80 overflow-hidden", className)}
-    >
+    <div className={joinClasses("w-full min-h-80 overflow-hidden", className)}>
       <Image
         src={src}
         alt={alt}
-        fill
-        className="object-cover"
+        width={1200}
+        height={1600}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="h-full w-full object-cover"
         priority={priority}
       />
     </div>

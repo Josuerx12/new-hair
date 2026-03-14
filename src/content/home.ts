@@ -1,4 +1,12 @@
-import { CalendarSearch, ChartLine, Clock, Heart } from "lucide-react";
+import {
+  CalendarSearch,
+  ChartLine,
+  Clock,
+  FileText,
+  Heart,
+  Search,
+  Map,
+} from "lucide-react";
 
 export const siteMenu = [
   { label: "Início", href: "#inicio" },
@@ -110,6 +118,44 @@ export const glossExpressBenefit = [
     title: "Eficiência com padrão premium",
     description:
       "Efeito camuflagem, cobertura total dos brancos, trazendo naturalidade",
+  },
+];
+export const lisoPerfeitoBenefit = [
+  {
+    title: "Personalização real do resultado",
+    description:
+      "Não é um alisamento padrão. Não é um produto pronto. Utilizamos um software excluivo que analisa profundamente a estrutura do fio, hitórico químico e saúde do cabelo, com o objetivo de entregar um liso saudável.",
+  },
+  {
+    title: "Acabamento elegante: brilho, leveza e naturalidade",
+    description:
+      "O resultado não é apenas ficar liso. É ficar alinhado, com movimento, e sem afinamento de pontas.",
+  },
+  {
+    title: "Segurança e previsibilidade no processo",
+    description:
+      "Com avaliação e direção técnica, o procedimento possui garantia vitalícia, oferecendo maior garantia e transparência a cliente. Assim reduzindo surpresas e aumentando a confiança dos clientes, antes, durante e depois.",
+  },
+];
+
+export const lisoPerfeitoProcess = [
+  {
+    title: "Avaliação com Angélica",
+    description:
+      "análise do fio, histórico e objetivo para definir a proposta adequada.",
+    icon: Search,
+  },
+  {
+    title: "Plano e execução",
+    description:
+      "personalização do procedimento com direção técnica e padrão de etapas.",
+    icon: FileText,
+  },
+  {
+    title: "Finalização e orientações pós procedimento",
+    description:
+      "Ao final, você recebe a finalização e orientações objetivas para manter o resultado bonito por mais tempo, com cuidado e consistência.",
+    icon: Map,
   },
 ];
 

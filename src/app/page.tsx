@@ -21,11 +21,12 @@ import {
   TagPill,
 } from "@/components/landing/section";
 import {
-  benefits,
   faqs,
   galleryItems,
   glossExpressBenefit,
   highlights,
+  lisoPerfeitoBenefit,
+  lisoPerfeitoProcess,
   processSteps,
   references,
   serviceFilters,
@@ -123,7 +124,7 @@ export default function Home() {
               <FramedImage
                 src="/assets/equipe.png"
                 alt="Equipe New Hair"
-                className="aspect-4/5"
+                className="aspect-4/3"
               />
             </div>
             <div className="space-y-4">
@@ -231,34 +232,137 @@ export default function Home() {
                 />
               ))}
             </div>
-          </div>
 
-          <div className="rounded-3xl flex flex-wrap md:flex-nowrap border border-stone-200 p-6 md:py-12 bg-white md:px-6">
-            <div className="flex flex-col items-start gap-4">
-              <h2 className="font-display font-bold text-3xl text-stone-900">
-                Como funciona
-              </h2>
-              <p className="text-stone-700">
-                Com uma ampla gama de tonalidades, colore do loura claríssimo ao
-                castanho escuro, em uma única bisnaga. Nossa avaliação é o
-                diferencial, para alinhamento de expectativas do cliente
-              </p>
-            </div>
-
-            <div className="flex flex-wrap sm:grid grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <h4 className="font-bold text-lg">Aplicação e finalização</h4>
+            <div className="rounded-3xl flex flex-wrap md:flex-nowrap border border-stone-200 p-6 md:py-12 bg-white md:px-6">
+              <div className="flex flex-col items-start gap-4">
+                <h2 className="font-display font-bold text-3xl text-stone-900">
+                  Como funciona
+                </h2>
                 <p className="text-stone-700">
-                  serviço objetivo, com foco em uniformidade, brilho e
-                  acabamento.
+                  Com uma ampla gama de tonalidades, colore do loura claríssimo
+                  ao castanho escuro, em uma única bisnaga. Nossa avaliação é o
+                  diferencial, para alinhamento de expectativas do cliente
                 </p>
               </div>
-              <div className="space-y-2">
-                <h4 className="font-bold text-lg">Avaliação rápida do tom</h4>
-                <p className="text-stone-700">
-                  alinhamos o objetivo, o tom atual e o nível de cobertura
-                  desejado.
-                </p>
+
+              <div className="flex flex-wrap sm:grid grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <h4 className="font-bold text-lg">Aplicação e finalização</h4>
+                  <p className="text-stone-700">
+                    serviço objetivo, com foco em uniformidade, brilho e
+                    acabamento.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <h4 className="font-bold text-lg">Avaliação rápida do tom</h4>
+                  <p className="text-stone-700">
+                    alinhamos o objetivo, o tom atual e o nível de cobertura
+                    desejado.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        <Section className="bg-white/55" contentClassName="space-y-16">
+          <SplitSection
+            eyebrow="LISO PERFEITO"
+            title="Liso Perfeito com Angélica Oliveira, habilitada no Norte e Noroeste Fluminense"
+            description="No New Hange Hair, o Liso Perfeito é conduzido com avaliação e critério técnico. O plano é definido a partir das características do fio, do histórico capilar e do resultado desejado, priorizando alinhamento, brilho e naturalidade com acabamento elegante. Angélica conduz pessoalmente a avaliação e orienta com clareza o caminho mais adequado antes de iniciar o procedimento."
+            cta={
+              <ButtonLink href="#contato" variant="secondary">
+                AGENDAR AVALIAÇÃO GRATUITA
+              </ButtonLink>
+            }
+            media={
+              <div className=" gap-4 grid grid-cols-1 md:grid-cols-2 flex-1">
+                <FramedImage
+                  src="/assets/liso-perfeito.png"
+                  alt="liso perfeito"
+                  className="rounded-md aspect-auto min-h-120"
+                />
+                <FramedImage
+                  src="/assets/angelica-1.jpg"
+                  alt="Angelica"
+                  className="rounded-md min-h-120 hidden sm:block "
+                />
+              </div>
+            }
+            mediaStyle={false}
+          />
+
+          <div className="space-y-8">
+            <SplitSection
+              eyebrow="Beneficios"
+              title="Três benefícios do liso perfeito"
+              cta={
+                <ButtonLink href="#contato" variant="secondary">
+                  AGENDAR AVALIAÇÃO GRATUITA
+                </ButtonLink>
+              }
+              content={
+                <div>
+                  {lisoPerfeitoBenefit.map((item, index) => (
+                    <div key={index}>
+                      <div className="space-y-3 pb-4" key={index}>
+                        <h4 className="font-bold text-lg">{item.title}</h4>{" "}
+                        <p className="text-stone-600 text-sm">
+                          {item.description}
+                        </p>
+                      </div>
+
+                      {index < lisoPerfeitoBenefit.length - 1 && (
+                        <>
+                          <hr className="border-[#D2AE6D]" />
+                          <br />
+                        </>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              }
+              media={
+                <div className="grid w-full max-w-full grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="w-full relative min-h-80 h-full rounded">
+                    <Image
+                      src="/assets/liso-perfeito-2.png"
+                      alt="liso perfeito"
+                      width={1200}
+                      height={1600}
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="lg:w-64 lg:h-80 lg:absolute -top-20 left-25 object-cover"
+                      priority
+                    />
+                  </div>
+
+                  <FramedImage
+                    src="/assets/liso-perfeito-3.png"
+                    alt="liso perfeito"
+                    priority
+                    className="w-full min-h-64 rounded hidden sm:block"
+                  />
+                </div>
+              }
+              reverse
+              mediaStyle={false}
+            />
+
+            <div>
+              <h3 className="font-display font-bold text-3xl text-stone-900">
+                Como funciona o liso perfeito
+              </h3>
+
+              <div className="grid grid-template-columns-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                {lisoPerfeitoProcess.map((item, index) => (
+                  <BenefitCard
+                    key={index}
+                    title={item.title}
+                    icon={item.icon as any}
+                    description={item.description}
+                    index={index}
+                  />
+                ))}
               </div>
             </div>
           </div>

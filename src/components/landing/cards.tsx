@@ -16,6 +16,7 @@ type ServiceCardProps = {
 };
 
 type BenefitCardProps = {
+  icon?: LucideIcon;
   title: string;
   description: string;
   index: number;
@@ -29,16 +30,19 @@ type FaqItemProps = {
 export function InfoCard({ description, icon: Icon, svgPath }: InfoCardProps) {
   return (
     <article className="rounded-3xl border border-stone-200 bg-white p-6 shadow-[0_12px_40px_rgba(28,25,23,0.06)]">
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-stone-100 text-lg text-stone-700">
-        {Icon ? (
-          <Icon />
-        ) : svgPath ? (
-          <img src={svgPath} alt="Icon" />
-        ) : (
-          <Info />
-        )}{" "}
-        {}
+      <div className="flex w-10 h-10 items-center justify-center rounded-full border border-[#D2AE6D] ">
+        <div className="bg-linear-to-br from-[#D2AE6D] h-8 w-8 flex justify-center items-center rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
+          {Icon ? (
+            <Icon />
+          ) : svgPath ? (
+            <img src={svgPath} alt="Icon" />
+          ) : (
+            <Info />
+          )}{" "}
+          {}
+        </div>
       </div>
+
       <p className="mt-3 text-sm leading-6 text-stone-600">{description}</p>
     </article>
   );
@@ -75,12 +79,17 @@ export function ServiceCard({
   );
 }
 
-export function BenefitCard({ title, description, index }: BenefitCardProps) {
+export function BenefitCard({
+  title,
+  description,
+  index,
+  icon: Icon,
+}: BenefitCardProps) {
   return (
     <article className="rounded-3xl border border-stone-200 space-y-2 bg-white p-6">
       <div className="flex text-xl font-display font-medium  w-10 h-10 items-center justify-center rounded-full border border-[#D2AE6D] ">
-        <div className="bg-linear-to-br from-[#D2AE6D] h-8 w-8 rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
-          {index + 1}
+        <div className="bg-linear-to-br flex justify-center items-center from-[#D2AE6D] h-8 w-8 rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
+          {Icon ? <Icon /> : <span>{index + 1}</span>}
         </div>
       </div>
       <h3 className="font-display text-2xl text-stone-900">{title}</h3>
