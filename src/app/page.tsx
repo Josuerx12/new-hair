@@ -1,16 +1,11 @@
 /** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
 import Image from "next/image";
 
-import {
-  BenefitCard,
-  FaqItem,
-  InfoCard,
-  ServiceCard,
-} from "@/components/landing/cards";
+import { BenefitCard, InfoCard, ServiceCard } from "@/components/landing/cards";
+import { FaqItem } from "@/components/faq-item";
 import { CtaBanner, SiteFooter, SiteHeader } from "@/components/landing/chrome";
 import {
   FramedImage,
-  GalleryPlaceholder,
   PlaceholderMedia,
   SplitSection,
 } from "@/components/landing/media";
@@ -25,6 +20,7 @@ import {
   galleryItems,
   glossExpressBenefit,
   highlights,
+  howNewHangeAttendmentWorks,
   lisoPerfeitoBenefit,
   lisoPerfeitoProcess,
   processSteps,
@@ -33,6 +29,7 @@ import {
   services,
   siteMenu,
 } from "@/content/home";
+import { Instagram, MapPin, Phone, Pin } from "lucide-react";
 
 export default function Home() {
   return (
@@ -263,6 +260,16 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          <Section>
+            <CtaBanner
+              eyebrow="COMO AGENDAR"
+              title="Agende seu horário e experimente o poder da Gloss Express!"
+              description="envie uma mensagem no WhatsApp com “Gloss Express” para confirmar o melhor horário disponível."
+              buttonLabel="AGENDE SEU GLOSS EXPRESS!"
+              buttonHref="#contato"
+            />
+          </Section>
         </Section>
 
         <Section className="bg-white/55" contentClassName="space-y-16">
@@ -349,7 +356,7 @@ export default function Home() {
             />
 
             <div>
-              <h3 className="font-display font-bold text-3xl text-stone-900">
+              <h3 className="font-display font-bold text-center text-3xl text-stone-900">
                 Como funciona o liso perfeito
               </h3>
 
@@ -358,7 +365,7 @@ export default function Home() {
                   <BenefitCard
                     key={index}
                     title={item.title}
-                    icon={item.icon as any}
+                    icon={item.icon}
                     description={item.description}
                     index={index}
                   />
@@ -366,185 +373,81 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </Section>
 
-        <Section>
-          <CtaBanner
-            eyebrow="COMO AGENDAR"
-            title="Agende seu horário e experimente o poder da Gloss Express!"
-            description="envie uma mensagem no WhatsApp com “Gloss Express” para confirmar o melhor horário disponível."
-            buttonLabel="AGENDE SEU GLOSS EXPRESS!"
-            buttonHref="#contato"
-          />
-        </Section>
-
-        <Section className="bg-white/45" contentClassName="space-y-16">
-          <SplitSection
-            eyebrow="Sobre a profissional"
-            title="Uma secao institucional para contar a historia por tras do atendimento"
-            description="Este bloco combina uma imagem real com texto de autoridade. Ele foi pensado para voce ajustar biografia, metodologia e proposta de valor sem refazer a composicao."
-            reverse
-            cta={
-              <ButtonLink href="#equipe" variant="secondary">
-                Conhecer equipe
-              </ButtonLink>
-            }
-            media={
-              <FramedImage
-                src="/assets/who-iam.jpg"
-                alt="Profissional New Hair em destaque"
-                className="aspect-4/5"
-              />
-            }
-          />
-
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="space-y-5">
-              <SectionHeading
-                eyebrow="Antes e depois"
-                title="Bloco editorial para prova visual com texto de suporte"
-                description="No wireframe essa area reforca resultados reais. Aqui ela fica pronta para receber fotos futuras sem alterar a malha da pagina."
-              />
-              <div className="space-y-4 text-sm leading-7 text-stone-600">
-                <p>
-                  O layout sustenta comparativos, legendas e explicacoes sobre
-                  tecnica usada, indicacao e manutencao.
-                </p>
-                <p>
-                  A ordem dos elementos foi pensada para continuar forte tanto
-                  em desktop quanto no mobile, onde a midia sobe e o texto
-                  permanece legivel.
-                </p>
-              </div>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <PlaceholderMedia
-                label="Resultado A"
-                caption="Imagem reservada"
-                ratio="portrait"
-              />
-              <PlaceholderMedia
-                label="Resultado B"
-                caption="Imagem reservada"
-                ratio="portrait"
-              />
-            </div>
-          </div>
-        </Section>
-
-        <Section
-          eyebrow="Diferenciais do processo"
-          title="Cada etapa importante pode virar um argumento objetivo"
-          description="Essa grade foi pensada para espelhar o bloco do wireframe com icones e frases curtas, deixando a pagina clara para quem esta comparando opcoes."
-          contentClassName="grid gap-5 md:grid-cols-2 xl:grid-cols-4"
-        >
-          {processSteps.map((step, index) => (
-            <article
-              key={step.title}
-              className="rounded-3xl border border-stone-200 bg-white p-6 text-center shadow-[0_16px_40px_rgba(28,25,23,0.06)]"
-            >
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#efe3d1] text-sm font-semibold tracking-[0.14em] text-stone-700">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-4 font-display text-2xl text-stone-900">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-stone-600">
-                {step.description}
-              </p>
-            </article>
-          ))}
-        </Section>
-
-        <Section>
-          <CtaBanner
-            eyebrow="Faixa estrategica"
-            title="Segundo CTA pronto para fechar a pagina antes de galeria, equipe e FAQ"
-            description="Voce consegue usar esse bloco para campanha, agenda limitada, oferta sazonal ou qualquer chamada mais forte no meio do funil."
-            buttonLabel="Reservar horario"
-            buttonHref="#contato"
-          />
-        </Section>
-
-        <Section
-          eyebrow="Galeria e depoimentos"
-          title="Placeholder estrutural para voce plugar imagens e provas sociais depois"
-          description="Em vez de travar o layout esperando novos assets, a secao ja ocupa o espaco correto e mantem o ritmo visual do wireframe."
-          contentClassName="space-y-16"
-        >
-          <GalleryPlaceholder items={galleryItems} />
-          <SplitSection
-            eyebrow="Quem esta por tras"
-            title="Uma segunda secao autoral para reforcar assinatura, metodo e posicionamento"
-            description="No wireframe existe um novo ponto de apresentacao da proprietaria. Aqui ele entra como um bloco adicional, mais curto, para reforcar autoridade perto do fim da pagina."
-            media={
-              <FramedImage
-                src="/assets/who-iam.jpg"
-                alt="Retrato da proprietaria da New Hair"
-                className="aspect-4/5"
-              />
-            }
-          />
+          <Section>
+            <CtaBanner
+              eyebrow="COMO AGENDAR"
+              title="Agende seu horário para o liso perfeito"
+              description="envie no WhatsApp “Avaliação do Liso Perfeito” para confirmar o horário."
+              buttonLabel="AGENDE SEU LISO PERFEITO!"
+              buttonHref="#contato"
+            />
+          </Section>
         </Section>
 
         <Section
           id="equipe"
-          className="bg-white/50"
-          contentClassName="space-y-12"
+          className="bg-white/45"
+          contentClassName="space-y-16"
         >
-          <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <div className="overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-[0_20px_50px_rgba(28,25,23,0.08)]">
+          <SplitSection
+            eyebrow="Quem esta por tras"
+            title="Quem está por trás do padrão New Hange Hair"
+            description="À frente do New Hange Hair, Angélica Oliveira acredita que beleza de alto padrão não é apenas estética, é cuidado, responsabilidade e confiança. Com mais de 30 anos de experiência em Campos dos Goytacazes, Angélica é além de cabeleireira, é: Visagista, Tricologista, Terapeuta Capilar, e também já atuou como instrutora em cursos."
+            reverse
+            media={
               <FramedImage
-                src="/assets/equipe.png"
-                alt="Equipe reunida da New Hair"
-                className="aspect-4/3"
+                src="/assets/angelica-about.jpg"
+                alt="Profissional New Hair em destaque"
+                className="aspect-square min-h-80 rounded"
               />
-            </div>
-            <div className="space-y-5">
-              <SectionHeading
-                eyebrow="Equipe"
-                title="Uma secao institucional dedicada ao time"
-                description="O bloco da equipe combina imagem ampla e texto de apoio para contar cultura, atendimento e especialidades sem precisar recorrer a cards individuais agora."
-              />
-              <div className="grid gap-4 sm:grid-cols-2">
-                <article className="rounded-3xl border border-stone-200 bg-white p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">
-                    Atendimento
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-stone-600">
-                    Espaco para reforcar acolhimento, reserva de horario e
-                    experiencia personalizada.
-                  </p>
-                </article>
-                <article className="rounded-3xl border border-stone-200 bg-white p-5">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">
-                    Especialidades
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-stone-600">
-                    Area ideal para listar tecnicas principais, acabamento,
-                    coloracao e suporte de manutencao.
-                  </p>
-                </article>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section>
-          <CtaBanner
-            eyebrow="Banner final"
-            title="Encerramento pensado para manter a decisao quente ate o ultimo scroll"
-            description="O wireframe termina com uma chamada forte. Aqui ela fica pronta para receber sua oferta principal, urgencia ou chamada para WhatsApp."
-            buttonLabel="Falar agora"
-            buttonHref="#contato"
+            }
           />
+
+          <SplitSection
+            eyebrow="Atendimento New Hange"
+            title="Como funciona o atendimento no New Hange"
+            content={
+              <div>
+                <ol className="relative flex flex-col gap-6">
+                  <div className="w-0.5 rounded h-[90%] z-0 bg-[#a58a57] absolute bottom-5 left-6" />
+                  {howNewHangeAttendmentWorks.map((step, index) => (
+                    <li key={index} className="mb-3 z-10 relative">
+                      <div className="flex items-center justify-start gap-4">
+                        <div className="flex justify-center items-center bg-linear-to-b h-12 w-12 from-[#FBF9F3] to-[#E2CBA1] rounded-full">
+                          <div className="font-bold text-lg font-display w-8 h-8 rounded-full text-center bg-linear-to-r from-[#D2AE6D] to-[#E9D8B9] text-[#61491E]">
+                            <span>{index + 1}</span>
+                          </div>
+                        </div>
+                        <p className="flex-1">{step}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            }
+            media={
+              <FramedImage
+                src="/assets/equipe-2.png"
+                alt="Profissional New Hair em destaque"
+                className="aspect-square min-h-80 rounded"
+              />
+            }
+          />
+
+          <Section>
+            <CtaBanner
+              eyebrow="COMO AGENDAR"
+              title="Para agendar, envie “Quero agendar” no WhatsApp."
+              buttonLabel="AGENDE AGORA!"
+              buttonHref="#contato"
+            />
+          </Section>
         </Section>
 
         <Section
           id="faq"
-          eyebrow="Perguntas frequentes"
-          title="FAQ estatico pronto para virar accordion depois"
-          description="Nesta primeira entrega, a estrutura prioriza leitura rapida e organizacao. Depois voce pode transformar esse bloco em interativo sem refatorar a pagina inteira."
+          title="Perguntas frequentes"
           contentClassName="grid gap-4"
         >
           {faqs.map((item) => (
@@ -558,22 +461,49 @@ export default function Home() {
 
         <Section
           id="contato"
-          eyebrow="Localizacao e contato"
-          title="Ultimo bloco preparado para endereco, horarios e mapa"
-          description="A estrutura respeita o wireframe com texto de apoio em um lado e um placeholder de mapa no outro, pronta para trocar depois por um embed real."
+          title="Localização e contato"
           contentClassName="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start"
         >
           <div className="space-y-5 rounded-4xl border border-stone-200 bg-white p-8 shadow-[0_18px_50px_rgba(28,25,23,0.06)]">
-            <p className="text-sm leading-7 text-stone-600">
-              Campinas, SP. Atendimento com horario marcado e suporte para
-              orientacao inicial via WhatsApp.
-            </p>
-            <div className="space-y-2 text-sm text-stone-700">
-              <p>Seg a Sex: 09h as 18h</p>
-              <p>Sabado: sob consulta</p>
+            <div className="flex gap-4">
+              <MapPin />
+              <a
+                href="https://www.google.com/maps/place/New+Hange+Hair+%7C+Sal%C3%A3o+de+Beleza+em+Campos+dos+Goytacazes/@-21.7676254,-41.3300742,14.75z/data=!4m22!1m15!4m14!1m6!1m2!1s0xbdd44e1708815d:0x1d65978c85ac56bb!2sNew+Hange+Hair+%7C+Sal%C3%A3o+de+Beleza+em+Campos+dos+Goytacazes,+R.+Durval+de+Souza,+90+-+Parque+Joao+Maria,+Campos+dos+Goytacazes+-+RJ,+28093-044!2m2!1d-41.3164947!2d-21.7780375!1m6!1m2!1s0xbdd44e1708815d:0x1d65978c85ac56bb!2sNew+Hange+Hair+%7C+Sal%C3%A3o+de+Beleza+em+Campos+dos+Goytacazes,+R.+Durval+de+Souza,+90+-+Parque+Joao+Maria,+Campos+dos+Goytacazes+-+RJ,+28093-044!2m2!1d-41.3164947!2d-21.7780375!3m5!1s0xbdd44e1708815d:0x1d65978c85ac56bb!8m2!3d-21.7780375!4d-41.3164947!16s%2Fg%2F11bw41qth7?entry=ttu&g_ep=EgoyMDI2MDMxMS4wIKXMDSoASAFQAw%3D%3D"
+                className="font-bold text-sm flex-1"
+              >
+                Rua Durval de Souza, 90, Campos dos Goytacazes, RJ
+              </a>
             </div>
-            <ButtonLink href="https://wa.me/5500000000000" variant="secondary">
-              Abrir conversa
+            <div className="flex gap-4">
+              <Phone />
+              <p className="text-sm flex-1">
+                Whatsapp:{" "}
+                <a
+                  href="https://wa.me/5522992118380"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold"
+                >
+                  (22) 99211-8380
+                </a>
+              </p>
+            </div>
+            <div className="flex gap-4">
+              <Instagram />
+              <p className="text-sm flex-1">
+                Instagram:
+                <a
+                  href="https://www.instagram.com/newhangehair?utm_source=site"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold"
+                >
+                  @newhangehair
+                </a>
+              </p>
+            </div>
+            <ButtonLink href="https://wa.me/5522992118380" variant="secondary">
+              CHAMAR NO WHATSAPP
             </ButtonLink>
           </div>
           <div className="overflow-hidden rounded-4xl border border-stone-200 bg-white p-4 shadow-[0_18px_50px_rgba(28,25,23,0.06)]">
@@ -582,6 +512,16 @@ export default function Home() {
               caption="Substitua por iframe ou imagem do mapa quando quiser finalizar o bloco de localizacao."
               ratio="wide"
               className="min-h-80"
+              iframe={
+                <div className="h-full w-full rounded-md">
+                  <iframe
+                    title="Mapa"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17586.801254738337!2d-41.33007420450613!3d-21.76762540082871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd44e1708815d%3A0x1d65978c85ac56bb!2sNew%20Hange%20Hair%20%7C%20Sal%C3%A3o%20de%20Beleza%20em%20Campos%20dos%20Goytacazes!5e0!3m2!1spt-BR!2sbr!4v1773516868059!5m2!1spt-BR!2sbr"
+                    className="h-full w-full rounded-md"
+                    loading="lazy"
+                  ></iframe>
+                </div>
+              }
             />
           </div>
         </Section>

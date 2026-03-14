@@ -1,5 +1,4 @@
 import { Info, LucideIcon } from "lucide-react";
-import { ReactNode } from "react";
 import { ButtonLink } from "./section";
 
 type InfoCardProps = {
@@ -20,11 +19,6 @@ type BenefitCardProps = {
   title: string;
   description: string;
   index: number;
-};
-
-type FaqItemProps = {
-  question: string;
-  answer: string;
 };
 
 export function InfoCard({ description, icon: Icon, svgPath }: InfoCardProps) {
@@ -94,20 +88,6 @@ export function BenefitCard({
       </div>
       <h3 className="font-display text-2xl text-stone-900">{title}</h3>
       <p className="mt-3 text-sm leading-6 text-stone-600">{description}</p>
-    </article>
-  );
-}
-
-export function FaqItem({ question, answer }: FaqItemProps) {
-  return (
-    <article className="rounded-3xl border border-stone-200 bg-white px-6 py-5">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="text-base font-semibold text-stone-900">{question}</h3>
-        <span className="text-lg text-stone-400">+</span>
-      </div>
-      <p className="mt-3 max-w-3xl text-sm leading-6 text-stone-600">
-        {answer}
-      </p>
     </article>
   );
 }

@@ -1,3 +1,4 @@
+/** biome-ignore-all assist/source/organizeImports: <explanation> */
 import {
   CalendarSearch,
   ChartLine,
@@ -5,16 +6,15 @@ import {
   FileText,
   Heart,
   Search,
-  Map,
+  Map as MapIcon,
 } from "lucide-react";
 
 export const siteMenu = [
-  { label: "Início", href: "#inicio" },
   { label: "Serviços", href: "#servicos" },
   { label: "Resultados", href: "#resultados" },
   { label: "Equipe", href: "#equipe" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contato", href: "#contato" },
+  { label: "Duvidas", href: "#faq" },
+  { label: "Contato/Localização", href: "#contato" },
 ];
 
 export const highlights = [
@@ -103,6 +103,14 @@ export const services = [
   },
 ];
 
+export const howNewHangeAttendmentWorks = [
+  "Você chama no WhatsApp e informa o serviço desejado.",
+  "Em procedimentos técnicos, alinhamos histórico e objetivo antes de confirmar a agenda.",
+  "Confirmamos o melhor horário disponível e organizamos o atendimento.",
+  "Atendimento pontual, execução cuidadosa e acabamento impecável.",
+  "Finalização e orientações objetivas para manter o resultado.",
+];
+
 export const glossExpressBenefit = [
   {
     title: "Cobertura rápida de fios brancos",
@@ -155,7 +163,7 @@ export const lisoPerfeitoProcess = [
     title: "Finalização e orientações pós procedimento",
     description:
       "Ao final, você recebe a finalização e orientações objetivas para manter o resultado bonito por mais tempo, com cuidado e consistência.",
-    icon: Map,
+    icon: MapIcon,
   },
 ];
 
@@ -201,23 +209,54 @@ export const processSteps = [
 
 export const faqs = [
   {
-    question: "Como funciona a avaliação inicial?",
+    question: "⁠Eu preciso ser atendida pela fundadora?",
     answer:
-      "A base da página já prepara esse bloco para explicar diagnóstico, análise de fio, indicação técnica e proposta personalizada.",
+      "Não necessariamente. A maioria dos serviços pode ser realizada pela equipe, seguindo o padrão de técnica, organização e acabamento do salão. No entanto, o Liso Perfeito e as mechas são realizados exclusivamente pela Angélica, mediante avaliação e agendamento.",
   },
   {
-    question: "Quanto tempo dura a manutenção?",
+    question: "Vocês realizam correção de cor?",
     answer:
-      "Você poderá ajustar esse texto depois com a regra real do salão, mas a seção já comporta frequência e cuidados entre visitas.",
+      "Sim. A correção de cor exige avaliação prévia e condução responsável. Por isso, a orientação começa no WhatsApp, para entendermos o histórico do cabelo e indicarmos o caminho mais seguro e coerente com o resultado desejado.",
   },
   {
-    question: "É possível adaptar para diferentes técnicas?",
+    question: "Quais serviços o salão oferece?",
     answer:
-      "Sim. Os cards de serviço foram montados para você trocar títulos, descrições e CTAs sem alterar a estrutura.",
+      "O New Hange Hair atende cabelos, unhas e maquiagem, além de serviços técnicos como cor, correção de cor, Gloss Express, mechas e avaliação para o Liso Perfeito.",
   },
   {
-    question: "Essa landing suporta novas campanhas?",
+    question: "Como faço para agendar?",
     answer:
-      "Sim. A composição foi desenhada em blocos reutilizáveis para evoluir com novas ofertas, fotos e provas sociais.",
+      "O agendamento é realizado pelo WhatsApp. Envie uma mensagem informando o serviço desejado e a sua disponibilidade de dia e horário. A equipe confirma o melhor horário disponível e orienta os próximos passos.",
+  },
+  {
+    question: "Como vocês informam valores?",
+    answer:
+      "Os valores são informados após a orientação do serviço e, quando necessário, após avaliação. Dessa forma, o orçamento fica alinhado ao seu objetivo, ao histórico do cabelo e ao tempo de atendimento previsto.",
+  },
+  {
+    question: "Vocês atendem com horário marcado?",
+    answer:
+      "Sim. Trabalhamos com horário confirmado para garantir pontualidade, organização e um atendimento com atenção aos detalhes.",
+  },
+  {
+    question: "É possível conseguir encaixe no mesmo dia?",
+    answer:
+      "Quando existe disponibilidade, sim. Recomendamos consultar pelo WhatsApp para verificarmos os horários livres e a viabilidade do encaixe.",
+  },
+  {
+    question:
+      "Como funciona a avaliação para cor, correção de cor, mechas e Liso Perfeito?",
+    answer:
+      "Nós analisamos o objetivo, o histórico do cabelo e a condição atual dos fios. Em seguida, orientamos a proposta mais segura e adequada ao resultado desejado. Para mechas e Liso Perfeito, a avaliação direciona o agendamento com a Angélica.",
+  },
+  {
+    question: "Quais são as formas de pagamento?",
+    answer:
+      "As formas de pagamento são informadas no WhatsApp antes da confirmação do horário, para que tudo fique claro e organizado.",
+  },
+  {
+    question: "Qual é a política de remarcação e atrasos?",
+    answer:
+      "Para manter a organização da agenda, remarcações e atrasos devem ser comunicados com antecedência pelo WhatsApp. A equipe orienta a melhor solução conforme a disponibilidade do dia.",
   },
 ];

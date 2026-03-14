@@ -11,6 +11,7 @@ type PlaceholderMediaProps = {
   beforeImageAlt?: string;
   afterImageSrc?: string;
   afterImageAlt?: string;
+  iframe?: React.ReactNode;
 };
 
 type SplitSectionProps = {
@@ -49,6 +50,7 @@ export function PlaceholderMedia({
   beforeImageAlt,
   afterImageSrc,
   afterImageAlt,
+  iframe,
 }: PlaceholderMediaProps) {
   const comparisonImages =
     beforeImageSrc && afterImageSrc
@@ -100,6 +102,10 @@ export function PlaceholderMedia({
             fill
             className="object-cover"
           />
+        </div>
+      ) : iframe ? (
+        <div className="absolute inset-0 overflow-hidden rounded-3xl border border-white/70">
+          {iframe}
         </div>
       ) : (
         <div className="absolute inset-5 rounded-3xl border border-white/70" />

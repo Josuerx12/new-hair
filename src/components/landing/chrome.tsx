@@ -13,7 +13,7 @@ type SiteFooterProps = {
 type CtaBannerProps = {
   eyebrow: string;
   title: string;
-  description: string;
+  description?: string;
   buttonLabel: string;
   buttonHref: string;
 };
@@ -65,9 +65,9 @@ export function SiteFooter({ menu }: SiteFooterProps) {
             width={140}
             height={38}
           />
-          <p className="max-w-md text-sm leading-6 text-stone-600">
-            Estrutura base da landing New Hair pronta para receber seus ajustes
-            finos de cor, fundos e novas imagens.
+          <p className="text-sm text-stone-600">
+            Todos os direitos reservados. New Hair - Salão de Beleza em Campos
+            dos Goytacazes, RJ. CNPJ: 44.071.657/0001-15.
           </p>
         </div>
         <div>
@@ -90,7 +90,7 @@ export function SiteFooter({ menu }: SiteFooterProps) {
           <h3 className="font-semibold uppercase tracking-[0.18em] text-stone-500">
             Contato
           </h3>
-          <p>Campinas, SP</p>
+          <p>Rua Durval de Souza, 90, Campos dos Goytacazes, RJ</p>
           <p>Atendimento com hora marcada</p>
           <p>WhatsApp e direct para avaliação</p>
         </div>
@@ -116,9 +116,11 @@ export function CtaBanner({
           <h3 className="font-display text-3xl leading-tight sm:text-4xl">
             {title}
           </h3>
-          <p className="text-sm leading-7 text-stone-300 sm:text-base">
-            {description}
-          </p>
+          {description && (
+            <p className="text-sm leading-7 text-stone-300 sm:text-base">
+              {description}
+            </p>
+          )}
         </div>
         <ButtonLink href={buttonHref} variant="secondary">
           {buttonLabel}
