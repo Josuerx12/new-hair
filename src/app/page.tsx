@@ -29,72 +29,74 @@ import {
   services,
   siteMenu,
 } from "@/content/home";
-import { Instagram, MapPin, Phone, Pin } from "lucide-react";
+import {
+  ChevronsDown,
+  Info,
+  Instagram,
+  MapPin,
+  Phone,
+  Pin,
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <SiteHeader menu={siteMenu} />
       <main>
         <section
           id="inicio"
-          className="section-shell relative isolate overflow-hidden px-4 py-10 sm:px-6 lg:px-8 lg:py-16"
+          className="section-shell bg-[url('/assets/hero-bg.jpg')] bg-cover min-h-screen relative isolate overflow-hidden pt-8"
         >
-          <div className="absolute inset-0 -z-10">
-            <Image
-              src="/assets/hero-bg.jpg"
-              alt="Ambiente da New Hair"
-              fill
-              priority
-              className="object-cover opacity-20"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,250,245,0.98),rgba(245,239,231,0.82))]" />
-          </div>
-          <div className="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="space-y-8">
+          <div className="mx-4 md:mx-auto md:mt-20 grid w-full max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="space-y-8 lg:mt-25">
               <div className="space-y-5">
                 <div>
-                  <h1 className="max-w-2xl font-display text-2xl font-bold text-[#0F1215] sm:text-3xl lg:text-4xl">
+                  <h1 className="max-w-2xl font-display font-bold text-[#0F1215] text-3xl sm:text-4xl lg:text-5xl">
                     Salão de beleza em Campos dos Goytacazes/RJ com
                   </h1>
-                  <p className="text-[#D2AE6D] text-2xl sm:text-3xl lg:text-4xl font-display italic font-bold">
+                  <p className="text-[#D2AE6D] text-3xl sm:text-4xl lg:text-5xl font-display italic font-bold">
                     técnica, cuidado e resultado impecável
                   </p>
                 </div>
-                <p className="max-w-xl text-base leading-8 text-stone-700 sm:text-md">
+                <p className="max-w-xl text-2xl leading-8 text-stone-700 sm:text-md">
                   Cabelos, unhas e maquiagem com organização, pontualidade e
                   padrão elevado. Agende pelo WhatsApp e viva uma experiência
                   única, segura e com autoestima renovada.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="#servicos" variant="secondary">
+                <ButtonLink href="#servicos" variant="primary">
                   Agendar Horário
                 </ButtonLink>
                 <ButtonLink href="#contato" variant="ghost">
                   Ver Resultados
                 </ButtonLink>
               </div>
-              <p className="max-w-xl text-base text-[#737373] sm:text-sm">
+              <p className="max-w-xl text-sm text-[#737373] sm:text-sm">
                 Corte, escova, coloração, correção de cor, manicure, pedicure e
                 maquiagem em Campos dos Goytacazes.
               </p>
             </div>
             <div className="relative">
-              <div className="overflow-hidden rounded-[36px] border border-white/70 bg-white shadow-[0_30px_80px_rgba(28,25,23,0.15)]">
+              <div className="overflow-hidden">
                 <FramedImage
-                  src="/assets/who-iam.jpg"
+                  src="/assets/hero.png"
                   alt="Profissional da New Hair"
                   priority
-                  className="aspect-4/5 min-h-120"
+                  className="aspect-4/6 min-h-120 object-cover"
                 />
               </div>
             </div>
           </div>
+
+          <div className="bg-[#D2AE6D] absolute bottom-5 w-full h-0.5 " />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-linear-to-r from-[#D2AE6D] to-[#E9D8B9] rounded-full flex items-center justify-center w-10 h-10">
+            <ChevronsDown size={32} />
+          </div>
         </section>
 
         <Section contentClassName="space-y-12">
-          <div className="grid col-span-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center">
+          <div className="flex justify-center gap-6 flex-wrap">
             {highlights.map((item) => (
               <InfoCard
                 key={item.description}
@@ -108,7 +110,7 @@ export default function Home() {
             Escolha o que você quer resolver hoje:
           </h2>
 
-          <div className="grid text-center col-span-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 justify-center">
+          <div className="flex flex-wrap justify-center gap-6 max-w-3xl mx-auto">
             {serviceFilters.map((filter, index) => (
               <TagPill key={filter} label={filter} active={index === 0} />
             ))}
@@ -121,29 +123,25 @@ export default function Home() {
               <FramedImage
                 src="/assets/equipe.png"
                 alt="Equipe New Hair"
-                className="aspect-4/3"
+                className="aspect-4/5"
               />
             </div>
             <div className="space-y-4">
-              <SectionHeading
-                eyebrow="Diferencias"
-                title="Uma equipe preparada para entrega tecnica, acolhimento e resultado impecavel"
-                description="Profissionais alinhados em atendimento, organização e padrão elevado para que voce viva uma experiencia segura, pontual e com a confianca de estar em boas maos do inicio ao fim."
-              />
+              <SectionHeading title="Diferenciais" />
               <div className="grid gap-4">
-                {references.map((item, index) => (
+                {references.map(({ title, description, icon: Icon }, index) => (
                   <article
-                    key={item.title}
-                    className="rounded-3xl border border-stone-200 bg-[#efe3d1] px-5 py-5"
+                    key={index}
+                    className="rounded-lg border border-[#E5DDD2] bg-linear-to-br from-[#FAF6EF] to-[#E7D4B1] px-5 py-5"
                   >
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">
-                      Diferencial {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mt-2 font-bold text-lg text-stone-900">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-stone-700">
-                      {item.description}
+                    <div className="flex text-xl font-display font-medium  w-10 h-10 items-center justify-center rounded-full border border-[#D2AE6D] ">
+                      <div className="bg-linear-to-br flex justify-center items-center from-[#D2AE6D] h-8 w-8 rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
+                        {Icon ? <Icon /> : <Info />}
+                      </div>
+                    </div>
+                    <h3 className="mt-2 text-2xl text-stone-900">{title}</h3>
+                    <p className="mt-2 leading-6 text-stone-700">
+                      {description}
                     </p>
                   </article>
                 ))}
@@ -152,12 +150,11 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section
-          id="servicos"
-          eyebrow="Serviços New Hange Hair"
-          title="Serviços oferecidos pela New Hange Hair"
-          contentClassName="space-y-6"
-        >
+        <Section id="servicos" contentClassName="space-y-12">
+          <h2 className="text-2xl text-center lg:text-3xl xl:text-4xl font-display text-stone-900">
+            Serviços New Hange Hair
+          </h2>
+
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -165,7 +162,7 @@ export default function Home() {
               description={service.description}
               cta={service.cta}
               media={
-                <div className={"min-h-80 relative overflow-hidden"}>
+                <div className={"min-h-80 relative rounded-xl overflow-hidden"}>
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -181,7 +178,7 @@ export default function Home() {
 
         <Section
           id="resultados"
-          className="bg-white/55"
+          className="bg-white/55 z-0"
           contentClassName="space-y-16"
         >
           <SplitSection
@@ -189,25 +186,28 @@ export default function Home() {
             title="Gloss Express em Campos dos Goytacazes cobertura de fios brancos com rapidez e acabamento natural"
             description=" Para quem precisa manter a cor em dia sem permanência prolongada no salão. A Gloss Express entrega cobertura de fios brancos, renovação do tom e brilho imediato, com aparência bem cuidada e padrão elevado."
             cta={
-              <ButtonLink href="#contato" variant="secondary">
-                Quero avaliar meu caso
-              </ButtonLink>
+              <ButtonLink href="#contato">Quero avaliar meu caso</ButtonLink>
             }
+            mediaStyle={false}
             media={
-              <div className="grid gap-3 p-4 sm:grid-cols-2">
-                <PlaceholderMedia
-                  label="Antes"
-                  caption="Imagem inicial"
-                  ratio="portrait"
-                  imageSrc="/assets/gloss-ex-1.png"
-                  imageAlt="Antes"
-                />
-                <PlaceholderMedia
-                  label="Depois"
-                  caption="Resultado final"
-                  ratio="portrait"
-                  imageSrc="/assets/gloss-ex-2.png"
-                  imageAlt="Depois"
+              <div className="grid w-full max-w-full grid-cols-1 gap-4 sm:grid-cols-2">
+                <div className="w-full relative min-h-80 h-full rounded">
+                  <Image
+                    src="/assets/gloss-ex-1.png"
+                    alt="liso perfeito"
+                    width={1200}
+                    height={1600}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="lg:w-64 lg:h-80 lg:absolute -top-20 left-25 object-cover"
+                    priority
+                  />
+                </div>
+
+                <FramedImage
+                  src="/assets/gloss-ex-2.png"
+                  alt="liso perfeito"
+                  priority
+                  className="w-full min-h-64 z-20 rounded hidden sm:block"
                 />
               </div>
             }
@@ -260,8 +260,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <Section>
+        </Section>
+        <section className="bg-[url('/assets/fundo.png')] lg:min-h-screen bg-white/55 bg-center z-10">
+          <div className="max-w-3xl px-4 mx-auto">
             <CtaBanner
               eyebrow="COMO AGENDAR"
               title="Agende seu horário e experimente o poder da Gloss Express!"
@@ -269,8 +270,8 @@ export default function Home() {
               buttonLabel="AGENDE SEU GLOSS EXPRESS!"
               buttonHref="#contato"
             />
-          </Section>
-        </Section>
+          </div>
+        </section>
 
         <Section className="bg-white/55" contentClassName="space-y-16">
           <SplitSection
@@ -278,7 +279,7 @@ export default function Home() {
             title="Liso Perfeito com Angélica Oliveira, habilitada no Norte e Noroeste Fluminense"
             description="No New Hange Hair, o Liso Perfeito é conduzido com avaliação e critério técnico. O plano é definido a partir das características do fio, do histórico capilar e do resultado desejado, priorizando alinhamento, brilho e naturalidade com acabamento elegante. Angélica conduz pessoalmente a avaliação e orienta com clareza o caminho mais adequado antes de iniciar o procedimento."
             cta={
-              <ButtonLink href="#contato" variant="secondary">
+              <ButtonLink href="#contato">
                 AGENDAR AVALIAÇÃO GRATUITA
               </ButtonLink>
             }
@@ -304,7 +305,7 @@ export default function Home() {
               eyebrow="Beneficios"
               title="Três benefícios do liso perfeito"
               cta={
-                <ButtonLink href="#contato" variant="secondary">
+                <ButtonLink href="#contato">
                   AGENDAR AVALIAÇÃO GRATUITA
                 </ButtonLink>
               }
@@ -375,13 +376,24 @@ export default function Home() {
           </div>
 
           <Section>
-            <CtaBanner
-              eyebrow="COMO AGENDAR"
-              title="Agende seu horário para o liso perfeito"
-              description="envie no WhatsApp “Avaliação do Liso Perfeito” para confirmar o horário."
-              buttonLabel="AGENDE SEU LISO PERFEITO!"
-              buttonHref="#contato"
-            />
+            <div className="relative isolate flex items-center justify-center mx-auto max-w-3xl">
+              <Image
+                src="/assets/fundo-2.png"
+                width={1920}
+                height={1080}
+                alt="fundo02"
+                className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-auto w-[80%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-55"
+              />
+              <div className="relative z-10 overflow-hidden rounded-xl">
+                <CtaBanner
+                  eyebrow="COMO AGENDAR"
+                  title="Agende seu horário para o liso perfeito"
+                  description="envie no WhatsApp “Avaliação do Liso Perfeito” para confirmar o horário."
+                  buttonLabel="AGENDE SEU LISO PERFEITO!"
+                  buttonHref="#contato"
+                />
+              </div>
+            </div>
           </Section>
         </Section>
 
@@ -434,16 +446,18 @@ export default function Home() {
               />
             }
           />
-
-          <Section>
-            <CtaBanner
-              eyebrow="COMO AGENDAR"
-              title="Para agendar, envie “Quero agendar” no WhatsApp."
-              buttonLabel="AGENDE AGORA!"
-              buttonHref="#contato"
-            />
-          </Section>
         </Section>
+
+        <section>
+          <CtaBanner
+            eyebrow="COMO AGENDAR"
+            title="Para agendar, envie “Quero agendar” no WhatsApp."
+            buttonLabel="AGENDE AGORA!"
+            buttonHref="#contato"
+            rounded={false}
+            withBg
+          />
+        </section>
 
         <Section
           id="faq"
@@ -502,28 +516,25 @@ export default function Home() {
                 </a>
               </p>
             </div>
-            <ButtonLink href="https://wa.me/5522992118380" variant="secondary">
+            <ButtonLink href="https://wa.me/5522992118380">
               CHAMAR NO WHATSAPP
             </ButtonLink>
           </div>
-          <div className="overflow-hidden rounded-4xl border border-stone-200 bg-white p-4 shadow-[0_18px_50px_rgba(28,25,23,0.06)]">
-            <PlaceholderMedia
-              label="Mapa da regiao"
-              caption="Substitua por iframe ou imagem do mapa quando quiser finalizar o bloco de localizacao."
-              ratio="wide"
-              className="min-h-80"
-              iframe={
-                <div className="h-full w-full rounded-md">
-                  <iframe
-                    title="Mapa"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17586.801254738337!2d-41.33007420450613!3d-21.76762540082871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd44e1708815d%3A0x1d65978c85ac56bb!2sNew%20Hange%20Hair%20%7C%20Sal%C3%A3o%20de%20Beleza%20em%20Campos%20dos%20Goytacazes!5e0!3m2!1spt-BR!2sbr!4v1773516868059!5m2!1spt-BR!2sbr"
-                    className="h-full w-full rounded-md"
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              }
-            />
-          </div>
+
+          {/* <PlaceholderMedia
+            label="Mapa da regiao"
+            caption="Substitua por iframe ou imagem do mapa quando quiser finalizar o bloco de localizacao."
+            ratio="wide"
+            className="lg:min-h-80"
+            iframe={
+              <iframe
+                title="Mapa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17586.801254738337!2d-41.33007420450613!3d-21.76762540082871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd44e1708815d%3A0x1d65978c85ac56bb!2sNew%20Hange%20Hair%20%7C%20Sal%C3%A3o%20de%20Beleza%20em%20Campos%20dos%20Goytacazes!5e0!3m2!1spt-BR!2sbr!4v1773516868059!5m2!1spt-BR!2sbr"
+                className="h-full w-full"
+                loading="lazy"
+              ></iframe>
+            }
+          /> */}
         </Section>
       </main>
       <SiteFooter menu={siteMenu} />

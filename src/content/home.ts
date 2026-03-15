@@ -7,14 +7,17 @@ import {
   Heart,
   Search,
   Map as MapIcon,
+  Check,
+  ChartNoAxesColumn,
+  Compass,
 } from "lucide-react";
 
 export const siteMenu = [
   { label: "Serviços", href: "#servicos" },
   { label: "Resultados", href: "#resultados" },
-  { label: "Equipe", href: "#equipe" },
-  { label: "Duvidas", href: "#faq" },
-  { label: "Contato/Localização", href: "#contato" },
+  { label: "Sobre", href: "#" },
+  { label: "Como funciona", href: "#" },
+  { label: "Localização", href: "#contato" },
 ];
 
 export const highlights = [
@@ -53,15 +56,18 @@ export const references = [
   {
     title: "Técnica com responsabilidade",
     description: "foco em beleza, segurança e resultado consistente.",
+    icon: Check,
   },
   {
     title: "Ritmo inteligente",
     description: "organização e eficiência, sem comprometer o acabamento.",
+    icon: ChartNoAxesColumn,
   },
   {
     title: "Padrão de entrega",
     description:
       "equipe treinada, atendimento pontual e experiência acolhedora.",
+    icon: Compass,
   },
 ];
 

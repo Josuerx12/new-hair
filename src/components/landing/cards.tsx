@@ -23,8 +23,8 @@ type BenefitCardProps = {
 
 export function InfoCard({ description, icon: Icon, svgPath }: InfoCardProps) {
   return (
-    <article className="rounded-3xl border border-stone-200 bg-white p-6 shadow-[0_12px_40px_rgba(28,25,23,0.06)]">
-      <div className="flex w-10 h-10 items-center justify-center rounded-full border border-[#D2AE6D] ">
+    <article className="flex flex-col items-center justify-center min-h-48 text-center rounded-lg grow max-w-75 border border-[#E5DDD2] bg-linear-to-r from-[#FAF6EF] to-[#F3E9D8] p-6">
+      <div className="flex w-10 h-10  items-center justify-center text-center rounded-full border border-[#D2AE6D] ">
         <div className="bg-linear-to-br from-[#D2AE6D] h-8 w-8 flex justify-center items-center rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
           {Icon ? (
             <Icon />
@@ -37,7 +37,7 @@ export function InfoCard({ description, icon: Icon, svgPath }: InfoCardProps) {
         </div>
       </div>
 
-      <p className="mt-3 text-sm leading-6 text-stone-600">{description}</p>
+      <p className="mt-3 text-lg leading-6 text-[#3F3F3F]">{description}</p>
     </article>
   );
 }
@@ -49,21 +49,16 @@ export function ServiceCard({
   media,
 }: ServiceCardProps) {
   return (
-    <article className="flex flex-wrap-reverse overflow-hidden rounded-4xl border border-stone-200 bg-white shadow-[0_20px_55px_rgba(28,25,23,0.07)]">
-      <div className="flex flex-col justify-between p-7">
+    <article className="flex flex-wrap-reverse overflow-hidden lg:p-6 rounded-xl border border-stone-200 bg-white shadow-[0_20px_55px_rgba(28,25,23,0.07)]">
+      <div className="flex flex-col gap-2 p-7">
         <div>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500">
-            Serviço New Hair
-          </span>
-          <h3 className="mt-4 font-display text-3xl text-stone-900">{title}</h3>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-stone-600">
+          <h3 className="mt-4 font-display text-3xl text-[#3E2F13]">{title}</h3>
+          <p className="mt-4 max-w-xl text-base text-[#737373]">
             {description}
           </p>
         </div>
         <div className="mt-8">
-          <ButtonLink href="#contato" variant="secondary">
-            {cta}
-          </ButtonLink>
+          <ButtonLink href="#contato">{cta}</ButtonLink>
         </div>
       </div>
       <div className="min-h-72 flex-1 border-t border-stone-200 lg:min-h-full lg:border-t-0 lg:border-l">
@@ -87,7 +82,7 @@ export function BenefitCard({
         </div>
       </div>
       <h3 className="font-display text-2xl text-stone-900">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-stone-600">{description}</p>
+      <p className="mt-3 text-sm leading-6 text-[#737373]">{description}</p>
     </article>
   );
 }

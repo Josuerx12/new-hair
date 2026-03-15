@@ -16,12 +16,14 @@ type CtaBannerProps = {
   description?: string;
   buttonLabel: string;
   buttonHref: string;
+  withBg?: boolean;
+  rounded?: boolean;
 };
 
 export function SiteHeader({ menu }: SiteHeaderProps) {
   return (
-    <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-[#f6f1ea]/90 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
+    <header className="md:fixed inset-x-0 md:top-2 z-30">
+      <div className="mx-auto flex w-full md:max-w-7xl border backdrop-blur border-[#E5DDD2] bg-white/80 rounded items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
         <a href="#inicio" className="flex items-center gap-3">
           <Image
             src="/assets/logo.png"
@@ -42,13 +44,6 @@ export function SiteHeader({ menu }: SiteHeaderProps) {
             </a>
           ))}
         </nav>
-        <ButtonLink
-          href="#contato"
-          variant="secondary"
-          className="hidden sm:inline-flex"
-        >
-          Agendar avaliação
-        </ButtonLink>
       </div>
     </header>
   );
@@ -105,27 +100,34 @@ export function CtaBanner({
   description,
   buttonLabel,
   buttonHref,
+  rounded = true,
+  withBg = false,
 }: CtaBannerProps) {
   return (
-    <div className="overflow-hidden rounded-[36px] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_35%),linear-gradient(135deg,#111827_0%,#1f2937_100%)] px-6 py-10 text-white sm:px-10 lg:px-14 lg:py-14">
-      <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
-        <div className="max-w-2xl space-y-3">
-          <span className="inline-flex rounded-full border border-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-200">
-            {eyebrow}
-          </span>
-          <h3 className="font-display text-3xl leading-tight sm:text-4xl">
-            {title}
-          </h3>
-          {description && (
-            <p className="text-sm leading-7 text-stone-300 sm:text-base">
-              {description}
-            </p>
-          )}
-        </div>
-        <ButtonLink href={buttonHref} variant="secondary">
-          {buttonLabel}
-        </ButtonLink>
+    <div
+      className={`overflow-hidden relative isolate ${rounded ? "rounded-xl " : ""} bg-[radial-gradient(circle_at_top,#484A4C,transparent_35%),linear-gradient(135deg,#252627_0%,#252627_100%)] min-h-91.75 px-6 py-10 text-white sm:px-10 lg:px-14 lg:py-14`}
+    >
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center justify-center gap-6">
+        <span className="uppercase text-xl">{eyebrow}</span>
+        <h3 className="font-display text-center font-bold text-3xl sm:text-[40px]">
+          {title}
+        </h3>
+        {description && (
+          <p className="text-sm leading-7 text-stone-300 sm:text-base">
+            {description}
+          </p>
+        )}
+        <ButtonLink href={buttonHref}>{buttonLabel}</ButtonLink>
       </div>
+      {withBg && (
+        <Image
+          src="/assets/fundo-cta.png"
+          width={491}
+          height={301}
+          alt="Background decorativo do banner de chamada para ação"
+          className="pointer-events-none absolute left-1/2 top-0 z-0 -translate-x-1/2 object-cover opacity-50"
+        />
+      )}
     </div>
   );
 }

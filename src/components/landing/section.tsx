@@ -80,7 +80,7 @@ export function SectionHeading({
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="font-display text-3xl leading-tight text-stone-900 sm:text-4xl">
+      <h2 className="font-display text-3xl leading-tight text-stone-900 sm:text-[40px]">
         {title}
       </h2>
       {description ? (
@@ -100,8 +100,8 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   const variants = {
     primary:
-      "bg-stone-900 text-white shadow-[0_14px_30px_rgba(28,25,23,0.18)] hover:bg-stone-800",
-    secondary: "bg-[#d8c1a0] text-stone-900 hover:bg-[#ccb08a]",
+      "bg-linear-to-r from-[#D2AE6D] to-[#E9D8B9] text-black! hover:from-[#E9D8B9] border border-[#D0C2AE]",
+    secondary: "bg-white text-stone-900 hover:bg-[#ccb08a]",
     ghost:
       "border border-stone-300 bg-white text-stone-900 hover:border-stone-400 hover:bg-stone-50",
   };
@@ -110,7 +110,7 @@ export function ButtonLink({
     <a
       href={href}
       className={joinClasses(
-        "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold tracking-[0.18em] uppercase transition-colors duration-200",
+        "inline-flex items-center text-center justify-center rounded px-5 py-3 font-bold tracking-[0.18em] uppercase transition-colors duration-200",
         variants[variant],
         className,
       )}
@@ -124,7 +124,7 @@ export function TagPill({ label }: TagPillProps) {
   return (
     <div
       className={joinClasses(
-        "rounded-full ease-in-out cursor-default duration-150 border px-4 py-3 boder border-[#E5DDD2] hover:bg-[#D2AE6D] hover:text-white bg-white text-[#D2AE6D] text-xl font-medium tracking-[0.08em]",
+        "rounded-full w-full lg:w-fit text-center ease-in-out cursor-default duration-150 border px-6 py-2 boder border-[#E5DDD2] hover:bg-[#D2AE6D] hover:text-white bg-white text-[#D2AE6D] text-2xl",
       )}
     >
       {label}

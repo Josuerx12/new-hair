@@ -104,9 +104,7 @@ export function PlaceholderMedia({
           />
         </div>
       ) : iframe ? (
-        <div className="absolute inset-0 overflow-hidden rounded-3xl border border-white/70">
-          {iframe}
-        </div>
+        iframe
       ) : (
         <div className="absolute inset-5 rounded-3xl border border-white/70" />
       )}
