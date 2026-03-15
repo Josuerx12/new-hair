@@ -390,6 +390,7 @@ export default function Home() {
                   title="Agende seu horário para o liso perfeito"
                   description="envie no WhatsApp “Avaliação do Liso Perfeito” para confirmar o horário."
                   buttonLabel="AGENDE SEU LISO PERFEITO!"
+                  withBg
                   buttonHref="#contato"
                 />
               </div>
