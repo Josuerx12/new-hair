@@ -521,20 +521,12 @@ export default function Home() {
             </ButtonLink>
           </div>
 
-          {/* <PlaceholderMedia
-            label="Mapa da regiao"
-            caption="Substitua por iframe ou imagem do mapa quando quiser finalizar o bloco de localizacao."
-            ratio="wide"
-            className="lg:min-h-80"
-            iframe={
-              <iframe
-                title="Mapa"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17586.801254738337!2d-41.33007420450613!3d-21.76762540082871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd44e1708815d%3A0x1d65978c85ac56bb!2sNew%20Hange%20Hair%20%7C%20Sal%C3%A3o%20de%20Beleza%20em%20Campos%20dos%20Goytacazes!5e0!3m2!1spt-BR!2sbr!4v1773516868059!5m2!1spt-BR!2sbr"
-                className="h-full w-full"
-                loading="lazy"
-              ></iframe>
-            }
-          /> */}
+          <iframe
+            title="Mapa"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17586.801254738337!2d-41.33007420450613!3d-21.76762540082871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbdd44e1708815d%3A0x1d65978c85ac56bb!2sNew%20Hange%20Hair%20%7C%20Sal%C3%A3o%20de%20Beleza%20em%20Campos%20dos%20Goytacazes!5e0!3m2!1spt-BR!2sbr!4v1773516868059!5m2!1spt-BR!2sbr"
+            className="h-full w-full"
+            loading="lazy"
+          ></iframe>
         </Section>
       </main>
       <SiteFooter menu={siteMenu} />
