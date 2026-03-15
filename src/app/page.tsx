@@ -476,7 +476,7 @@ export default function Home() {
         <Section
           id="contato"
           title="Localização e contato"
-          contentClassName="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start"
+          contentClassName="grid gap-8 lg:min-h-[500px] lg:grid-cols-[0.72fr_1.28fr] lg:items-start"
         >
           <div className="space-y-5 rounded-4xl border border-stone-200 bg-white p-8 shadow-[0_18px_50px_rgba(28,25,23,0.06)]">
             <div className="flex gap-4">
