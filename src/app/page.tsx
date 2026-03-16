@@ -13,13 +13,11 @@ import {
 } from "@/components/landing/section";
 import {
   faqs,
-  galleryItems,
   glossExpressBenefit,
   highlights,
   howNewHangeAttendmentWorks,
   lisoPerfeitoBenefit,
   lisoPerfeitoProcess,
-  processSteps,
   references,
   serviceFilters,
   services,
@@ -40,7 +38,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center" />
           </div>
 
-          <div className="relative z-20 px-4 mx-auto md:mt-20 grid w-full max-w-6xl gap-10 lg:grid-cols-[1.10fr_0.90fr]">
+          <div className="relative z-20 px-4 mx-auto md:mt-20 pb-8 grid w-full max-w-6xl gap-10 lg:grid-cols-[1.10fr_0.90fr]">
             <div className="space-y-8 lg:mt-25">
               <div className="space-y-5">
                 <div>
