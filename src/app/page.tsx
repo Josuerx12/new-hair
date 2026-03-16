@@ -4,11 +4,7 @@ import Image from "next/image";
 import { BenefitCard, InfoCard, ServiceCard } from "@/components/landing/cards";
 import { FaqItem } from "@/components/faq-item";
 import { CtaBanner, SiteFooter, SiteHeader } from "@/components/landing/chrome";
-import {
-  FramedImage,
-  PlaceholderMedia,
-  SplitSection,
-} from "@/components/landing/media";
+import { FramedImage, SplitSection } from "@/components/landing/media";
 import {
   ButtonLink,
   Section,
@@ -29,14 +25,7 @@ import {
   services,
   siteMenu,
 } from "@/content/home";
-import {
-  ChevronsDown,
-  Info,
-  Instagram,
-  MapPin,
-  Phone,
-  Pin,
-} from "lucide-react";
+import { ChevronsDown, Info, Instagram, MapPin, Phone } from "lucide-react";
 
 export default function Home() {
   return (
@@ -45,25 +34,30 @@ export default function Home() {
       <main>
         <section
           id="inicio"
-          className="section-shell bg-[url('/assets/hero-bg.jpg')] bg-cover min-h-screen relative isolate overflow-hidden pt-8"
+          className="section-shell relative isolate z-10 min-h-screen overflow-hidden pt-30 lg:pt-10"
         >
-          <div className="mx-4 md:mx-auto md:mt-20 grid w-full max-w-6xl gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute inset-0 bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center" />
+          </div>
+
+          <div className="relative z-20 px-4 mx-auto md:mt-20 grid w-full max-w-6xl gap-10 lg:grid-cols-[1.10fr_0.90fr]">
             <div className="space-y-8 lg:mt-25">
               <div className="space-y-5">
                 <div>
-                  <h1 className="max-w-2xl font-display font-bold text-[#0F1215] text-3xl sm:text-4xl lg:text-5xl">
+                  <h1 className="max-w-2xl font-display leading-17 font-bold text-[#0F1215] text-3xl sm:text-4xl lg:text-5xl">
                     Salão de beleza em Campos dos Goytacazes/RJ com
                   </h1>
-                  <p className="text-[#D2AE6D] text-3xl sm:text-4xl lg:text-5xl font-display italic font-bold">
+                  <p className="text-[#D2AE6D] text-3xl leading-17 sm:text-4xl lg:text-5xl font-display italic font-bold">
                     técnica, cuidado e resultado impecável
                   </p>
                 </div>
-                <p className="max-w-xl text-2xl leading-8 text-stone-700 sm:text-md">
+                <p className="max-w-xl text-2xl leading-9 text-[#737373] sm:text-md">
                   Cabelos, unhas e maquiagem com organização, pontualidade e
                   padrão elevado. Agende pelo WhatsApp e viva uma experiência
                   única, segura e com autoestima renovada.
                 </p>
               </div>
+
               <div className="flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="#servicos" variant="primary">
                   Agendar Horário
@@ -72,28 +66,32 @@ export default function Home() {
                   Ver Resultados
                 </ButtonLink>
               </div>
-              <p className="max-w-xl text-sm text-[#737373] sm:text-sm">
+
+              <p className="max-w-xl leading-6 text-sm text-[#737373] sm:text-sm">
                 Corte, escova, coloração, correção de cor, manicure, pedicure e
                 maquiagem em Campos dos Goytacazes.
               </p>
             </div>
+
             <div className="relative">
               <div className="overflow-hidden">
                 <FramedImage
                   src="/assets/hero.png"
                   alt="Profissional da New Hair"
                   priority
-                  className="aspect-4/6 min-h-120 object-cover"
+                  className="lg:aspect-4/6 object-cover"
                 />
               </div>
             </div>
           </div>
-
-          <div className="bg-[#D2AE6D] absolute bottom-5 w-full h-0.5 " />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-linear-to-r from-[#D2AE6D] to-[#E9D8B9] rounded-full flex items-center justify-center w-10 h-10">
-            <ChevronsDown size={32} />
-          </div>
         </section>
+
+        <div className="relative flex justify-center">
+          <div className="bg-[#D2AE6D] z-10 absolute bottom-0 w-full h-0.5" />
+          <div className="absolute -top-5 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-[#B89045]/40 bg-linear-to-r from-[#D2AE6D] to-[#E9D8B9] shadow-[0_10px_24px_rgba(116,88,40,0.35)] animate-bounce">
+            <ChevronsDown size={28} className="text-[#61491E]" />
+          </div>
+        </div>
 
         <Section contentClassName="space-y-12">
           <div className="flex justify-center gap-6 flex-wrap">
@@ -178,7 +176,7 @@ export default function Home() {
 
         <Section
           id="resultados"
-          className="bg-white/55 z-0"
+          className="bg-white/55 z-0! relative isolate"
           contentClassName="space-y-16"
         >
           <SplitSection
@@ -230,7 +228,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="rounded-3xl flex flex-wrap md:flex-nowrap border border-stone-200 p-6 md:py-12 bg-white md:px-6">
+            <div className="rounded-3xl z-10 relative isolate flex flex-wrap md:flex-nowrap border border-stone-200 p-6 md:py-12 bg-white md:px-6">
               <div className="flex flex-col items-start gap-4">
                 <h2 className="font-display font-bold text-3xl text-stone-900">
                   Como funciona
@@ -261,8 +259,12 @@ export default function Home() {
             </div>
           </div>
         </Section>
-        <section className="bg-[url('/assets/fundo.png')] lg:min-h-screen bg-white/55 bg-center z-10">
-          <div className="max-w-3xl px-4 mx-auto">
+        <section className="bg-white/55 overflow-hidden">
+          {/* <div className="pointer-events-none absolute inset-0 z-10! overflow-hidden">
+            <div className="absolute inset-0  scale-115 bg-[url('/assets/fundo.png')] bg-cover bg-center" />
+          </div> */}
+
+          <div className="max-w-3xl px-4 mx-auto relative z-20">
             <CtaBanner
               eyebrow="COMO AGENDAR"
               title="Agende seu horário e experimente o poder da Gloss Express!"
@@ -423,13 +425,13 @@ export default function Home() {
             content={
               <div>
                 <ol className="relative flex flex-col gap-6">
-                  <div className="w-0.5 rounded h-[90%] z-0 bg-[#a58a57] absolute bottom-5 left-6" />
+                  <div className="w-0.5 rounded h-[90%] z-0 bg-[#a58a57] absolute bottom-5 left-5" />
                   {howNewHangeAttendmentWorks.map((step, index) => (
                     <li key={index} className="mb-3 z-10 relative">
                       <div className="flex items-center justify-start gap-4">
-                        <div className="flex justify-center items-center bg-linear-to-b h-12 w-12 from-[#FBF9F3] to-[#E2CBA1] rounded-full">
+                        <div className="flex justify-center items-center bg-linear-to-b h-10 w-10 from-[#FBF9F3] to-[#E2CBA1] rounded-full">
                           <div className="font-bold text-lg font-display w-8 h-8 rounded-full text-center bg-linear-to-r from-[#D2AE6D] to-[#E9D8B9] text-[#61491E]">
-                            <span>{index + 1}</span>
+                            <span className="text-[#61491E]">{index + 1}</span>
                           </div>
                         </div>
                         <p className="flex-1">{step}</p>

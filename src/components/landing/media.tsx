@@ -194,13 +194,15 @@ export function FramedImage({
   className?: string;
 }) {
   return (
-    <div className={joinClasses("w-full min-h-80 overflow-hidden", className)}>
+    <div
+      className={joinClasses("w-full lg:min-h-80 overflow-hidden", className)}
+    >
       <Image
         src={src}
         alt={alt}
         width={1200}
         height={1600}
-        sizes="(min-width: 1024px) 50vw, 100vw"
+        sizes="(min-width: 1024px) 20vw, 100vw"
         className="h-full w-full object-cover"
         priority={priority}
       />

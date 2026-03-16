@@ -23,7 +23,7 @@ type BenefitCardProps = {
 
 export function InfoCard({ description, icon: Icon, svgPath }: InfoCardProps) {
   return (
-    <article className="flex flex-col items-center justify-center min-h-48 text-center rounded-lg grow max-w-75 border border-[#E5DDD2] bg-linear-to-r from-[#FAF6EF] to-[#F3E9D8] p-6">
+    <article className="flex flex-col items-center justify-center min-h-48 text-center rounded-lg grow md:max-w-75 border border-[#E5DDD2] bg-linear-to-r from-[#FAF6EF] to-[#F3E9D8] p-6">
       <div className="flex w-10 h-10  items-center justify-center text-center rounded-full border border-[#D2AE6D] ">
         <div className="bg-linear-to-br from-[#D2AE6D] h-8 w-8 flex justify-center items-center rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
           {Icon ? (
@@ -76,9 +76,13 @@ export function BenefitCard({
 }: BenefitCardProps) {
   return (
     <article className="rounded-3xl border border-stone-200 space-y-2 bg-white p-6">
-      <div className="flex text-xl font-display font-medium  w-10 h-10 items-center justify-center rounded-full border border-[#D2AE6D] ">
-        <div className="bg-linear-to-br flex justify-center items-center from-[#D2AE6D] h-8 w-8 rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
-          {Icon ? <Icon /> : <span>{index + 1}</span>}
+      <div className="flex text-xl font-display font-medium  w-8 h-8 items-center justify-center rounded-full border border-[#D2AE6D] ">
+        <div className="bg-linear-to-br flex justify-center items-center from-[#D2AE6D] h-6 w-6 rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
+          {Icon ? (
+            <Icon size={16} />
+          ) : (
+            <span className="text-sm">{index + 1}</span>
+          )}
         </div>
       </div>
       <h3 className="font-display text-2xl text-stone-900">{title}</h3>
