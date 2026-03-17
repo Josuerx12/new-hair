@@ -32,8 +32,8 @@ export function SiteHeader({ menu }: SiteHeaderProps) {
   };
 
   return (
-    <header className="fixed top-0 inset-x-0 z-40 px-2 pt-2 sm:px-4">
-      <div className="mx-auto flex h-25 w-full items-center justify-between gap-6 rounded border border-[#E5DDD2] bg-white/85 px-4 py-4 backdrop-blur sm:px-6 lg:max-w-6xl lg:gap-26 lg:px-8">
+    <header className="fixed top-0 inset-x-0 z-30 px-2 pt-2 sm:px-4">
+      <div className="mx-auto flex h-25 w-full items-center justify-between gap-6 rounded border border-[#E5DDD2] bg-white/85 px-4 py-4 backdrop-blur sm:px-6 lg:max-w-7xl lg:gap-26 lg:px-8">
         <a href="#inicio" className="flex items-center -translate-y-2">
           <Image
             src="/assets/logo.png"
@@ -94,7 +94,7 @@ export function SiteHeader({ menu }: SiteHeaderProps) {
 export function SiteFooter({ menu }: SiteFooterProps) {
   return (
     <footer className="border-t border-stone-200 bg-white px-4 py-10 sm:px-6 lg:px-8">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:items-start">
+      <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:items-start">
         <div className="space-y-4">
           <Image
             src="/assets/logo.png"
@@ -149,7 +149,7 @@ export function CtaBanner({
     <div
       className={`overflow-hidden z-20 relative isolate ${rounded ? "rounded-xl " : ""} bg-[radial-gradient(circle_at_top,#484A4C,transparent_35%),linear-gradient(135deg,#252627_0%,#252627_100%)] min-h-91.75 px-6 py-10 text-white sm:px-10 lg:px-14 lg:py-14`}
     >
-      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center justify-center gap-6">
+      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center justify-center gap-6">
         <span className="uppercase text-xl">{eyebrow}</span>
         <h3 className="font-display text-center font-bold text-3xl sm:text-[40px]">
           {title}

@@ -200,8 +200,9 @@ export function FramedImage({
       <Image
         src={src}
         alt={alt}
-        width={1200}
-        height={1600}
+        width={1920}
+        height={1080}
+        quality={100}
         sizes="(min-width: 1024px) 20vw, 100vw"
         className="h-full w-full object-cover"
         priority={priority}

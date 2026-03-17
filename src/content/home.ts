@@ -156,13 +156,13 @@ export const lisoPerfeitoProcess = [
   {
     title: "Avaliação com Angélica",
     description:
-      "análise do fio, histórico e objetivo para definir a proposta adequada.",
+      "Análise do fio, histórico e objetivo para definir a proposta adequada.",
     icon: Search,
   },
   {
     title: "Plano e execução",
     description:
-      "personalização do procedimento com direção técnica e padrão de etapas.",
+      "Personalização do procedimento com direção técnica e padrão de etapas.",
     icon: FileText,
   },
   {

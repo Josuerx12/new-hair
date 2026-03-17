@@ -23,7 +23,7 @@ type BenefitCardProps = {
 
 export function InfoCard({ description, icon: Icon, svgPath }: InfoCardProps) {
   return (
-    <article className="flex flex-col items-center justify-center min-h-48 text-center rounded-lg grow md:max-w-75 border border-[#E5DDD2] bg-linear-to-r from-[#FAF6EF] to-[#F3E9D8] p-6">
+    <article className="flex flex-col items-center justify-center min-h-48 text-center rounded-lg grow md:max-w-92 border border-[#E5DDD2] bg-linear-to-r from-[#FAF6EF] to-[#F3E9D8] p-6">
       <div className="flex w-10 h-10  items-center justify-center text-center rounded-full border border-[#D2AE6D] ">
         <div className="bg-linear-to-br from-[#D2AE6D] h-8 w-8 flex justify-center items-center rounded-full text-center to-[#E9D8B9]  text-[#61491E]">
           {Icon ? (
