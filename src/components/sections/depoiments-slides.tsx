@@ -9,20 +9,8 @@ import "swiper/css/pagination";
 
 const testimonialVideos = [
   {
-    id: "Z3A2nSdOCBA",
-    title: "Depoimento New Hange Hair 1",
-  },
-  {
-    id: "Z3A2nSdOCBA",
-    title: "Depoimento New Hange Hair 1",
-  },
-  {
-    id: "Z3A2nSdOCBA",
-    title: "Depoimento New Hange Hair 1",
-  },
-  {
-    id: "Z3A2nSdOCBA",
-    title: "Depoimento New Hange Hair 1",
+    id: "J7WA5eLgajs",
+    title: "Depoimento New Hange Hair Gloss Express",
   },
 ];
 

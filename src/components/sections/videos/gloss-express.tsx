@@ -116,8 +116,8 @@ const GlossExpressVideo = () => {
             />
             <div className="absolute inset-0 bg-black/30 transition group-hover:bg-black/40" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="rounded-full bg-white/90 h-10 w-10 flex items-center justify-center shadow-lg transition group-hover:scale-110 group-hover:bg-white">
-                ▶
+              <span className="flex h-11 w-16 items-center justify-center rounded-xl bg-[#FF0000] shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition group-hover:scale-105 group-hover:bg-[#FF1A1A]">
+                <span className="ml-0.5 h-0 w-0 border-y-8 border-y-transparent border-l-13 border-l-white" />
               </span>
             </div>
           </button>
