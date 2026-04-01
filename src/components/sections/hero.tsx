@@ -15,10 +15,10 @@ const Hero = () => {
         <div className="space-y-8 lg:mt-25">
           <div className="space-y-5">
             <div>
-              <h1 className="max-w-2xl font-display leading-17 font-bold text-[#0F1215] text-3xl sm:text-4xl lg:text-5xl">
+              <h1 className="max-w-2xl font-display leading-10 md:leading-17 font-bold text-[#0F1215] text-3xl sm:text-4xl lg:text-5xl">
                 Salão de beleza em Campos dos Goytacazes/RJ com
               </h1>
-              <p className="text-[#D2AE6D] text-3xl leading-17 sm:text-4xl lg:text-5xl font-display italic font-bold">
+              <p className="text-[#D2AE6D] text-3xl leading-10 md:leading-17 sm:text-4xl lg:text-5xl font-display italic font-bold">
                 técnica, cuidado e resultado impecável
               </p>
             </div>

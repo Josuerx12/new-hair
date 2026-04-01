@@ -1,29 +1,7 @@
-/** biome-ignore-all lint/suspicious/noArrayIndexKey: <explanation> */
-import Image from "next/image";
-
-import { BenefitCard, InfoCard, ServiceCard } from "@/components/landing/cards";
-import { FaqItem } from "@/components/faq-item";
-import { CtaBanner, SiteFooter, SiteHeader } from "@/components/landing/chrome";
-import { FramedImage, SplitSection } from "@/components/landing/media";
-import {
-  ButtonLink,
-  Section,
-  SectionHeading,
-  TagPill,
-} from "@/components/landing/section";
-import {
-  faqs,
-  glossExpressBenefit,
-  highlights,
-  howNewHangeAttendmentWorks,
-  lisoPerfeitoBenefit,
-  lisoPerfeitoProcess,
-  references,
-  serviceFilters,
-  services,
-  siteMenu,
-} from "@/content/home";
-import { ChevronsDown, Info, Instagram, MapPin, Phone } from "lucide-react";
+/** biome-ignore-all assist/source/organizeImports: <explanation> */
+import { SiteFooter, SiteHeader } from "@/components/landing/chrome";
+import { siteMenu } from "@/content/home";
+import { ChevronsDown } from "lucide-react";
 import Hero from "@/components/sections/hero";
 import Services from "@/components/sections/service";
 import GlossExpress from "@/components/sections/gloss-express";
