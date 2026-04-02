@@ -14,9 +14,9 @@ import {
 
 export const siteMenu = [
   { label: "Serviços", href: "#servicos" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Como funciona", href: "#como-funciona" },
   { label: "Resultados", href: "#resultados" },
-  { label: "Sobre", href: "#" },
-  { label: "Como funciona", href: "#" },
   { label: "Localização", href: "#contato" },
 ];
 

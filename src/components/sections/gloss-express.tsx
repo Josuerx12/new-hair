@@ -11,11 +11,7 @@ import GlossExpressVideo from "./videos/gloss-express";
 const GlossExpress = () => {
   return (
     <>
-      <Section
-        id="resultados"
-        className="relative isolate"
-        contentClassName="space-y-16"
-      >
+      <Section className="relative isolate" contentClassName="space-y-16">
         <SplitSection
           eyebrow="GLOSS EXPRESS"
           title="Gloss Express em Campos dos Goytacazes cobertura de fios brancos com rapidez e acabamento natural"

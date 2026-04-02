@@ -7,11 +7,7 @@ import { howNewHangeAttendmentWorks } from "@/content/home";
 const Team = () => {
   return (
     <>
-      <Section
-        id="equipe"
-        className="bg-white/45"
-        contentClassName="space-y-16"
-      >
+      <Section id="sobre" className="bg-white/45" contentClassName="space-y-16">
         <SplitSection
           eyebrow="Quem esta por tras"
           title="Quem está por trás do padrão New Hange Hair"
@@ -25,6 +21,8 @@ const Team = () => {
             />
           }
         />
+
+        <div id="como-funciona" />
 
         <SplitSection
           eyebrow="Atendimento New Hange"

@@ -16,7 +16,11 @@ const testimonialVideos = [
 
 const DepoimentSlides = () => {
   return (
-    <Section className="overflow-hidden" contentClassName="space-y-10">
+    <Section
+      id="resultados"
+      className="overflow-hidden"
+      contentClassName="space-y-10"
+    >
       <SectionHeading
         eyebrow="DEPOIMENTOS"
         title="O que as clientes dizem depois"
