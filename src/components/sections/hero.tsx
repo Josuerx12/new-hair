@@ -30,7 +30,7 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="#servicos" variant="primary">
+            <ButtonLink href="https://wa.me/5522998198120?text=Ol%C3%A1!%20Venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%2C%20meu%20nome%20%C3%A9%3A" variant="primary">
               Agendar Horário
             </ButtonLink>
             <ButtonLink href="#contato" variant="ghost">

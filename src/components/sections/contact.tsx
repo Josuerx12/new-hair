@@ -23,12 +23,12 @@ const Contact = () => {
           <p className="text-sm flex-1">
             Whatsapp:{" "}
             <a
-              href="https://wa.me/5522992118380"
+              href="https://wa.me/5522998198120?text=Ol%C3%A1!%20Venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%2C%20meu%20nome%20%C3%A9%3A"
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold"
             >
-              (22) 99211-8380
+              (22) 99819-8120
             </a>
           </p>
         </div>
@@ -46,7 +46,7 @@ const Contact = () => {
             </a>
           </p>
         </div>
-        <ButtonLink href="https://wa.me/5522992118380">
+        <ButtonLink href="https://wa.me/5522998198120?text=Ol%C3%A1!%20Venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%2C%20meu%20nome%20%C3%A9%3A">
           CHAMAR NO WHATSAPP
         </ButtonLink>
       </div>

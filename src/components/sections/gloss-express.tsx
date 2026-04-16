@@ -80,7 +80,7 @@ const GlossExpress = () => {
             title="Agende seu horário e experimente o poder da Gloss Express!"
             description="envie uma mensagem no WhatsApp com “Gloss Express” para confirmar o melhor horário disponível."
             buttonLabel="AGENDE SEU GLOSS EXPRESS!"
-            buttonHref="#contato"
+            buttonHref="https://wa.me/5522998198120?text=Ol%C3%A1!%20Venho%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%2C%20meu%20nome%20%C3%A9%3A"
           />
         </div>
       </section>
